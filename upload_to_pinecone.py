@@ -23,7 +23,6 @@ def load_csv_data(filepath: str):
             text = f"{row['Email Summary']} (Issue Type: {row['Issue Type']})"
             metadata = {
                 "email_id": row["Email ID"],
-                "sender": row["Sender"],
                 "ideal_reply": row["Ideal Reply"],
                 "issue_type": row["Issue Type"],
                 "email_summary": row["Email Summary"]
