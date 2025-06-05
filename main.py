@@ -1,7 +1,20 @@
 from fastapi import FastAPI, Query
 from pinecone_utils import query_pinecone
 
+
+from upload_to_pinecone import load_csv_data
+
+
 app = FastAPI()
+
+@app.post("/upload-emails")
+def upload_emails():
+    dataset = load_csv_data("emails.csv")
+    upload_to_pinecone(dataset)
+    return {"message": f"{len(dataset)} emails uploaded to Pinecone."}
+
+
+
 
 
 @app.get("/")
