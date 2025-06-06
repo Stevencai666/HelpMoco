@@ -15,7 +15,6 @@ OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
 
 
 
-
 # 初始化 Pinecone 客户端
 pc = Pinecone(api_key=PINECONE_API_KEY)
 
